@@ -3,7 +3,7 @@ package br.com.estudos.kanban.services.board;
 import br.com.estudos.kanban.entities.Board;
 import br.com.estudos.kanban.repositories.BoardRepository;
 import br.com.estudos.kanban.request.board.NovoBoardRequest;
-import br.com.estudos.kanban.response.board.NovoBoardResponse;
+import br.com.estudos.kanban.response.board.BoardResponse;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,9 +15,9 @@ public class NovoBoardService {
         this.repository = repository;
     }
 
-    public NovoBoardResponse execute(NovoBoardRequest request) {
+    public BoardResponse execute(NovoBoardRequest request) {
         var board = repository.save(new Board(request.getNome()));
-        return new NovoBoardResponse(board.getId(), board.getNome(), board.getDataCriacao());
+        return new BoardResponse(board.getId(), board.getNome(), board.getDataCriacao());
     }
 
 }

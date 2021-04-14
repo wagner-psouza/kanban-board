@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.time.LocalDateTime;
 
-public class NovoBoardResponse {
+public class BoardResponse {
 
     @ApiModelProperty(value = "Identificação")
     @JsonProperty("id")
@@ -19,7 +19,7 @@ public class NovoBoardResponse {
     @JsonProperty("data_criacao")
     private LocalDateTime data;
 
-    public NovoBoardResponse(Long id, String nome, LocalDateTime data) {
+    public BoardResponse(Long id, String nome, LocalDateTime data) {
         this.id = id;
         this.nome = nome;
         this.data = data;

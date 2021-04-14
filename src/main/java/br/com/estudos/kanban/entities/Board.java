@@ -2,7 +2,6 @@ package br.com.estudos.kanban.entities;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "board")
@@ -17,10 +16,6 @@ public class Board {
 
     @Column(name = "data_criacao", nullable = false, updatable = false)
     private LocalDateTime dataCriacao;
-
-    @OneToMany(mappedBy = "board")
-    @OrderBy("ordem")
-    private List<Bucket> buckets;
 
     @Deprecated
     public Board() {
@@ -41,9 +36,5 @@ public class Board {
 
     public LocalDateTime getDataCriacao() {
         return dataCriacao;
-    }
-
-    public List<Bucket> getBuckets() {
-        return buckets;
     }
 }
